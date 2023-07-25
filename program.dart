@@ -30,11 +30,11 @@ class Program {
   void editArticle(List<Article> stock, int refNumber) {
 
     stdout.write("Enter the article's new price : ");
-    double newPrice = stdin.readLineSync() as double;
+    double newPrice = double.parse(stdin.readLineSync()!);
     stdout.write("Enter the article's new name : ");
     String newName = stdin.readLineSync() as String;
     stdout.write("Enter the article's new quantity in stock : ");
-    int newQty = stdin.readLineSync() as int;
+    int newQty = int.parse(stdin.readLineSync()!);
 
     for(int i = 0; i < stock.length; i++){
       if(stock[i].refNumber == refNumber){
@@ -75,7 +75,7 @@ class Program {
 //=========================================
   void displayAllArticle(List<Article> stock) {
     for(int i = 0; i < stock.length; i++){
-      print(stock[i]);
+      stock[i].display();
     }
   }
 
